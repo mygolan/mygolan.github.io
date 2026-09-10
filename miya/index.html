@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>蜜芽 忘忧草-品牌背景、产品方向与常见疑问梳理</title>
+<meta name="description" content="围绕蜜芽与忘忧草两个关键词，梳理蜜芽平台的发展背景、母婴与家庭消费定位，以及忘忧草在不同语境下的常见含义，帮助读者分辨信息、理解搜索意图并找到可靠的使用与选购思路。">
+<meta name="keywords" content="蜜芽,忘忧草,蜜芽忘忧草,母婴电商,家庭消费,忘忧草含义,选购指南">
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+<style>
+:root{
+  --rose:#c94f7c;
+  --rose-deep:#9c3557;
+  --rose-soft:#fbeef4;
+  --leaf:#4f8a6b;
+  --leaf-soft:#eef6f0;
+  --ink:#2c2530;
+  --ink-2:#5a5260;
+  --line:#eee3ea;
+  --bg:#fdfbfc;
+  --radius:14px;
+  --shadow:0 6px 24px rgba(156,53,87,.08);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,sans-serif;
+  background:var(--bg);
+  color:var(--ink);
+  line-height:1.75;
+  font-size:16px;
+}
+img{max-width:100%;display:block;}
+a{color:inherit;text-decoration:none;}
+
+/* 顶部公告条 */
+.topbar{
+  background:linear-gradient(90deg,var(--rose-deep),var(--rose));
+  color:#fff;
+  font-size:13px;
+  text-align:center;
+  padding:8px 16px;
+  letter-spacing:.3px;
+}
+
+/* 页眉 */
+.site-header{
+  background:#fff;
+  border-bottom:1px solid var(--line);
+  position:sticky;
+  top:0;
+  z-index:50;
+}
+.header-inner{
+  max-width:1180px;
+  margin:0 auto;
+  padding:14px 20px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  flex-wrap:wrap;
+}
+.logo{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-weight:700;
+  font-size:20px;
+  color:var(--rose-deep);
+}
+.logo-mark{
+  width:38px;height:38px;
+  border-radius:11px;
+  background:linear-gradient(135deg,var(--rose),var(--leaf));
+  color:#fff;
+  display:flex;align-items:center;justify-content:center;
+  font-size:18px;font-weight:700;
+}
+.logo small{
+  display:block;
+  font-size:11px;
+  font-weight:400;
+  color:var(--ink-2);
+  letter-spacing:1px;
+}
+.main-nav ul{
+  list-style:none;
+  display:flex;
+  gap:26px;
+  flex-wrap:wrap;
+  font-size:15px;
+}
+.main-nav a{
+  color:var(--ink-2);
+  padding-bottom:4px;
+  border-bottom:2px solid transparent;
+  transition:.2s;
+}
+.main-nav a:hover{color:var(--rose);border-color:var(--rose);}
+.header-cta{
+  background:var(--rose);
+  color:#fff;
+  padding:9px 20px;
+  border-radius:999px;
+  font-size:14px;
+  transition:.2s;
+}
+.header-cta:hover{background:var(--rose-deep);}
+
+/* 首屏 */
+.hero{
+  max-width:1180px;
+  margin:0 auto;
+  padding:56px 20px 40px;
+  display:grid;
+  grid-template-columns:1.15fr .85fr;
+  gap:44px;
+  align-items:center;
+}
+.hero-tag{
+  display:inline-block;
+  background:var(--leaf-soft);
+  color:var(--leaf);
+  font-size:13px;
+  padding:5px 14px;
+  border-radius:999px;
+  margin-bottom:18px;
+}
+.hero h1{
+  font-size:38px;
+  line-height:1.32;
+  letter-spacing:.5px;
+  margin-bottom:18px;
+}
+.hero h1 em{
+  font-style:normal;
+  color:var(--rose);
+}
+.hero p{
+  color:var(--ink-2);
+  font-size:16px;
+  margin-bottom:16px;
+}
+.hero-actions{
+  display:flex;
+  gap:14px;
+  flex-wrap:wrap;
+  margin-top:24px;
+}
+.btn{
+  display:inline-block;
+  padding:12px 26px;
+  border-radius:999px;
+  font-size:15px;
+  transition:.22s;
+  border:1px solid transparent;
+}
+.btn-primary{background:var(--rose);color:#fff;}
+.btn-primary:hover{background:var(--rose-deep);transform:translateY(-2px);}
+.btn-ghost{border-color:var(--line);color:var(--ink-2);background:#fff;}
+.btn-ghost:hover{border-color:var(--rose);color:var(--rose);}
+
+.hero-panel{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  padding:26px;
+}
+.hero-panel h3{
+  font-size:16px;
+  margin-bottom:16px;
+  color:var(--rose-deep);
+}
+.panel-list{list-style:none;}
+.panel-list li{
+  display:flex;
+  gap:12px;
+  padding:11px 0;
+  border-bottom:1px dashed var(--line);
+  font-size:14.5px;
+  color:var(--ink-2);
+}
+.panel-list li:last-child{border-bottom:none;}
+.panel-list .dot{
+  flex:0 0 auto;
+  width:8px;height:8px;
+  border-radius:50%;
+  background:var(--leaf);
+  margin-top:9px;
+}
+
+/* 通用区块 */
+.section{
+  max-width:1180px;
+  margin:0 auto;
+  padding:48px 20px;
+}
+.section-head{
+  margin-bottom:30px;
+}
+.section-head .eyebrow{
+  color:var(--leaf);
+  font-size:13px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  display:block;
+  margin-bottom:8px;
+}
+.section-head h2{
+  font-size:27px;
+  letter-spacing:.4px;
+}
+.section-head p{
+  color:var(--ink-2);
+  font-size:15px;
+  margin-top:10px;
+  max-width:760px;
+}
+.band{
+  background:#fff;
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+}
+
+/* 双栏介绍 */
+.two-col{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:26px;
+}
+.info-card{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  padding:26px;
+  box-shadow:var(--shadow);
+}
+.info-card h3{
+  font-size:19px;
+  margin-bottom:12px;
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+.badge{
+  font-size:12px;
+  background:var(--rose-soft);
+  color:var(--rose-deep);
+  padding:3px 10px;
+  border-radius:999px;
+  font-weight:400;
+}
+.info-card p{
+  color:var(--ink-2);
+  font-size:15px;
+  margin-bottom:12px;
+}
+.info-card ul{
+  margin:10px 0 0 20px;
+  color:var(--ink-2);
+  font-size:15px;
+}
+.info-card li{margin-bottom:7px;}
+
+/* 分类卡片网格 */
+.grid-3{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:22px;
+}
+.topic-card{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  padding:24px;
+  transition:.24s;
+}
+.topic-card:hover{
+  transform:translateY(-4px);
+  box-shadow:var(--shadow);
+  border-color:#f3d7e4;
+}
+.topic-card .num{
+  font-size:13px;
+  color:var(--rose);
+  font-weight:700;
+  letter-spacing:1px;
+}
+.topic-card h3{
+  font-size:17px;
+  margin:10px 0 10px;
+}
+.topic-card p{
+  font-size:14.5px;
+  color:var(--ink-2);
+}
+
+/* 辨析区 */
+.compare{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:22px;
+}
+.compare-box{
+  border-radius:var(--radius);
+  padding:26px;
+  border:1px solid var(--line);
+}
+.compare-box.a{background:var(--rose-soft);border-color:#f6d9e6;}
+.compare-box.b{background:var(--leaf-soft);border-color:#d8ebdf;}
+.compare-box h3{font-size:18px;margin-bottom:12px;}
+.compare-box.a h3{color:var(--rose-deep);}
+.compare-box.b h3{color:var(--leaf);}
+.compare-box p,.compare-box li{font-size:14.5px;color:var(--ink-2);}
+.compare-box ul{margin:10px 0 0 20px;}
+.compare-box li{margin-bottom:6px;}
+
+/* 步骤流程 */
+.steps{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:20px;
+  counter-reset:step;
+}
+.step{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  padding:22px;
+  position:relative;
+}
+.step::before{
+  counter-increment:step;
+  content:"0" counter(step);
+  display:block;
+  font-size:22px;
+  font-weight:700;
+  color:#f0c6d8;
+  margin-bottom:10px;
+}
+.step h3{font-size:16px;margin-bottom:8px;}
+.step p{font-size:14px;color:var(--ink-2);}
+
+/* 问答 */
+.faq{
+  max-width:900px;
+  margin:0 auto;
+}
+.faq-item{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:12px;
+  margin-bottom:14px;
+  overflow:hidden;
+}
+.faq-item summary{
+  cursor:pointer;
+  padding:18px 22px;
+  font-size:16px;
+  font-weight:600;
+  list-style:none;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:14px;
+}
+.faq-item summary::-webkit-details-marker{display:none;}
+.faq-item summary::after{
+  content:"+";
+  color:var(--rose);
+  font-size:20px;
+  font-weight:400;
+  flex:0 0 auto;
+}
+.faq-item[open] summary::after{content:"−";}
+.faq-item .answer{
+  padding:0 22px 20px;
+  color:var(--ink-2);
+  font-size:14.8px;
+  border-top:1px dashed var(--line);
+  padding-top:16px;
+}
+
+/* 提示条 */
+.notice{
+  background:var(--rose-soft);
+  border-left:4px solid var(--rose);
+  border-radius:10px;
+  padding:20px 24px;
+  font-size:14.8px;
+  color:var(--ink-2);
+}
+.notice strong{color:var(--rose-deep);}
+
+/* 页脚 */
+.site-footer{
+  background:#2c2530;
+  color:#c9c1cd;
+  padding:48px 20px 24px;
+  margin-top:20px;
+}
+.footer-inner{
+  max-width:1180px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:1.4fr 1fr 1fr 1fr;
+  gap:30px;
+}
+.footer-brand{
+  font-size:18px;
+  font-weight:700;
+  color:#fff;
+  margin-bottom:12px;
+}
+.site-footer p{font-size:13.5px;line-height:1.9;}
+.site-footer h4{
+  color:#fff;
+  font-size:14px;
+  margin-bottom:14px;
+  letter-spacing:.5px;
+}
+.site-footer ul{list-style:none;}
+.site-footer li{margin-bottom:9px;font-size:13.5px;}
+.site-footer li a:hover{color:#f0c6d8;}
+.footer-bottom{
+  max-width:1180px;
+  margin:30px auto 0;
+  padding-top:20px;
+  border-top:1px solid #443b4a;
+  font-size:12.5px;
+  color:#8f8699;
+  text-align:center;
+}
+
+/* 响应式 */
+@media (max-width:980px){
+  .hero{grid-template-columns:1fr;padding-top:40px;gap:30px;}
+  .hero h1{font-size:31px;}
+  .grid-3{grid-template-columns:repeat(2,1fr);}
+  .steps{grid-template-columns:repeat(2,1fr);}
+  .footer-inner{grid-template-columns:1fr 1fr;}
+}
+@media (max-width:640px){
+  body{font-size:15px;}
+  .header-inner{padding:12px 16px;}
+  .main-nav ul{gap:16px;font-size:14px;}
+  .hero h1{font-size:26px;}
+  .hero{padding:32px 16px 26px;}
+  .section{padding:36px 16px;}
+  .section-head h2{font-size:22px;}
+  .two-col,.compare{grid-template-columns:1fr;}
+  .grid-3{grid-template-columns:1fr;}
+  .steps{grid-template-columns:1fr;}
+  .footer-inner{grid-template-columns:1fr;}
+  .header-cta{padding:8px 16px;font-size:13px;}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">本站为信息整理与科普类页面，内容用于帮助读者理解关键词含义，不构成任何交易或医疗建议。</div>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="logo" href="#top">
+      <span class="logo-mark">蜜</span>
+      <span>蜜芽 · 忘忧草<small>关键词解读与信息梳理</small></span>
+    </a>
+    <nav class="main-nav" aria-label="主导航">
+      <ul>
+        <li><a href="#meaning">含义辨析</a></li>
+        <li><a href="#miya">蜜芽背景</a></li>
+        <li><a href="#wangyou">忘忧草</a></li>
+        <li><a href="#guide">查找方法</a></li>
+        <li><a href="#faq">常见问题</a></li>
+      </ul>
+    </nav>
+    <a class="header-cta" href="#faq">先看常见问题</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- 首屏 -->
+  <section class="hero">
+    <div>
+      <span class="hero-tag">关键词解读 · 信息梳理</span>
+      <h1>蜜芽 忘忧草：<em>两个词分别指什么</em>，为什么会被一起搜索</h1>
+      <p>“蜜芽”在中文互联网语境中，通常指向一家以母婴与家庭消费为主的电商平台；“忘忧草”则是萱草等植物的别称，也常被用作文学与网络语境中的意象词。两者本身属于不同领域，放在一起搜索，多半是出于信息查找、名称对照或内容辨别的需要。</p>
+      <p>本页把这两个词的常见含义、可能的关联场景和查找思路分开讲清楚，帮助你判断自己真正想找的是哪一类信息，避免被同名或近似的说法带偏。</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#meaning">查看含义辨析</a>
+        <a class="btn btn-ghost" href="#guide">如何查找与辨别</a>
+      </div>
+    </div>
+    <aside class="hero-panel">
+      <h3>快速定位：你可能想找的是</h3>
+      <ul class="panel-list">
+        <li><span class="dot"></span><span>母婴、家庭消费类平台的背景与业务方向</span></li>
+        <li><span class="dot"></span><span>“忘忧草”作为植物别称与文化意象的解释</span></li>
+        <li><span class="dot"></span><span>两个词被放在一起时的常见来源与语境</span></li>
+        <li><span class="dot"></span><span>检索同类名称时的辨别方法与注意事项</span></li>
+      </ul>
+    </aside>
+  </section>
+
+  <!-- 含义辨析 -->
+  <section class="section" id="meaning">
+    <div class="section-head">
+      <span class="eyebrow">Meaning</span>
+      <h2>先分清：这是两个不同领域的关键词</h2>
+      <p>把“蜜芽”和“忘忧草”拆开理解，是准确判断搜索意图的第一步。它们各自有相对固定的含义，组合在一起时并不代表一个统一的、被广泛定义的专有名词。</p>
+    </div>
+    <div class="compare">
+      <div class="compare-box a">
+        <h3>“蜜芽”常见指向</h3>
+        <p>在中文互联网中，“蜜芽”更多被用来指代一家面向母婴与家庭人群的电商平台，名称本身带有“甜蜜”“萌芽”的联想，与育儿、成长类消费场景较为贴合。</p>
+        <ul>
+          <li>行业属性：母婴、家庭消费、电商零售方向</li>
+          <li>常见场景：奶粉、纸尿裤、辅食、玩具、家居用品等</li>
+          <li>搜索意图：了解平台、查商品、看评价、确认信息</li>
+        </ul>
+      </div>
+      <div class="compare-box b">
+        <h3>“忘忧草”常见指向</h3>
+        <p>“忘忧草”在传统语境中常被认为是萱草的别称，也有说法将其与黄花菜等植物联系起来。它同时是一个带有情绪色彩的文学意象，象征舒缓、放下烦忧。</p>
+        <ul>
+          <li>植物属性：萱草属植物的通俗别称之一</li>
+          <li>文化属性：诗词、散文、网络昵称中的常见意象</li>
+          <li>搜索意图：查词义、看典故、找同名内容或名称来源</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 蜜芽背景 -->
+  <section class="section band" id="miya">
+    <div class="section-head">
+      <span class="eyebrow">Background</span>
+      <h2>关于“蜜芽”：母婴与家庭消费方向</h2>
+      <p>如果你是因为看到“蜜芽”而来到本页，大概率是想了解这家平台是做什么的、主要面向哪些人群、消费时要注意什么。以下从公开可确认的方向做梳理。</p>
+    </div>
+    <div class="two-col">
+      <article class="info-card">
+        <h3>平台定位 <span class="badge">母婴 · 家庭</span></h3>
+        <p>蜜芽属于中文互联网中较早出现的母婴类电商品牌之一，业务方向围绕孕产、育儿及家庭日常消费展开，品类覆盖喂养、洗护、服饰、玩具、家居等常见需求。</p>
+        <p>这类平台的核心价值，通常在于把分散的母婴用品集中呈现，方便家长按年龄段、品类和使用场景快速筛选。</p>
+      </article>
+      <article class="info-card">
+        <h3>用户关注点 <span class="badge">选购参考</span></h3>
+        <p>家长在母婴类平台上最关心的，往往不是页面数量，而是商品来源是否清晰、适用年龄是否标注明确、售后与退换规则是否可查。</p>
+        <ul>
+          <li>优先看商品详情中的成分、材质与适用月龄</li>
+          <li>留意页面是否标注生产批次、保质期等基础信息</li>
+          <li>对比不同渠道的价格时，同时核对规格与容量</li>
+          <li>保留订单与沟通记录，便于后续处理售后</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <!-- 忘忧草 -->
+  <section class="section" id="wangyou">
+    <div class="section-head">
+      <span class="eyebrow">Culture</span>
+      <h2>关于“忘忧草”：植物别称与文化意象</h2>
+      <p>“忘忧草”并不是一个严格的植物学名称，而更像是一个流传较广的通俗叫法。理解它的关键在于分清“日常俗称”和“正式学名”之间的差别。</p>
+    </div>
+    <div class="grid-3">
+      <article class="topic-card">
+        <span class="num">01</span>
+        <h3>植物学层面</h3>
+        <p>在常见说法中，“忘忧草”多被指向萱草。萱草是多年生草本植物，花色以橙黄、橘红为主，常被用于园林绿化。不同地区对它的俗名并不完全统一。</p>
+      </article>
+      <article class="topic-card">
+        <span class="num">02</span>
+        <h3>文学与文化层面</h3>
+        <p>古人以“萱”代指母亲居所，“萱堂”即由此而来。忘忧草这一称呼，寄托的是缓解思念、放下忧愁的情绪表达，常出现在诗词与抒情文字中。</p>
+      </article>
+      <article class="topic-card">
+        <span class="num">03</span>
+        <h3>网络使用层面</h3>
+        <p>在网络语境里，“忘忧草”也常被用作昵称、账号名、店铺名或内容标题，含义更偏向个人化的情绪表达，与植物本身未必直接相关。</p>
+      </article>
+    </div>
+    <div class="notice" style="margin-top:26px;">
+      <strong>需要留意：</strong>网络上存在把“忘忧草”与某些不可食用或来源不明的植物混为一谈的说法。涉及食用、药用或保健用途时，请以正规植物学资料和专业机构意见为准，不要仅凭俗称判断。
+    </div>
+  </section>
+
+  <!-- 查找与辨别 -->
+  <section class="section band" id="guide">
+    <div class="section-head">
+      <span class="eyebrow">Guide</span>
+      <h2>当两个词一起出现时，可以这样查找与辨别</h2>
+      <p>组合关键词的搜索结果往往比较杂。下面这套顺序，能帮你更快判断某条信息是否与自己的需求相关。</p>
+    </div>
+    <div class="steps">
+      <article class="step">
+        <h3>拆开单独检索</h3>
+        <p>先分别搜索“蜜芽”和“忘忧草”，看各自的主流出结果是什么，再判断组合词是否只是两个词的偶然并列。</p>
+      </article>
+      <article class="step">
+        <h3>看来源与时间</h3>
+        <p>优先选择有明确署名、发布时间和出处说明的内容，避开无法追溯来源的转载与拼接页面。</p>
+      </article>
+      <article class="step">
+        <h3>核对名称一致性</h3>
+        <p>注意区分同名不同主体的情况，例如同名的店铺、账号、品牌或内容栏目，确认指向的是不是你真正要找的对象。</p>
+      </article>
+      <article class="step">
+        <h3>涉及消费先查规则</h3>
+        <p>如果与购物相关，先看商品信息、售后条款和平台规则，再决定是否下单，不要仅凭标题或宣传语判断。</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- 常见问题 -->
+  <section class="section" id="faq">
+    <div class="section-head">
+      <span class="eyebrow">FAQ</span>
+      <h2>常见问题</h2>
+      <p>以下是围绕这两个关键词较常被提到的问题，回答尽量保持稳妥，不夸大也不臆测。</p>
+    </div>
+    <div class="faq">
+      <details class="faq-item" open>
+        <summary>“蜜芽 忘忧草”是一个固定的专有名词吗？</summary>
+        <div class="answer">从公开信息看，它并不是一个被广泛定义的固定专有名词，更像是两个不同来源的词被放在一起搜索。它们分别指向母婴消费领域和植物文化意象，组合后没有统一含义。</div>
+      </details>
+      <details class="faq-item">
+        <summary>“忘忧草”到底指哪种植物？</summary>
+        <div class="answer">较为常见的说法是把它与萱草联系起来，也有地区将其他植物俗称为忘忧草。由于俗称不统一，涉及具体物种时应以植物学正式名称为准，避免仅凭俗称判断。</div>
+      </details>
+      <details class="faq-item">
+        <summary>母婴类平台的商品应该怎么挑？</summary>
+        <div class="answer">建议先确认适用年龄与材质成分，再看是否符合相关安全标准标识，最后对比规格、价格和售后政策。给婴幼儿使用的产品，来源清晰比价格便宜更重要。</div>
+      </details>
+      <details class="faq-item">
+        <summary>看到同名账号或店铺，怎么判断是否可靠？</summary>
+        <div class="answer">可以查看其注册信息、内容更新是否稳定、是否有可联系的客服渠道，以及用户评价是否集中在具体问题上。名称相同不代表主体相同，需要逐项核对。</div>
+      </details>
+      <details class="faq-item">
+        <summary>本页会提供商品购买链接吗？</summary>
+        <div class="answer">本页定位为信息整理与词义说明，不提供具体商品链接，也不做价格或效果上的承诺。如需购物，请通过正规渠道并自行核对商品信息与售后条款。</div>
+      </details>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">蜜芽 · 忘忧草</div>
+      <p>一个围绕关键词含义、行业背景与查找方法的信息整理页面，帮助读者分清不同语境下的说法，做出更稳妥的判断。</p>
+    </div>
+    <div>
+      <h4>内容导航</h4>
+      <ul>
+        <li><a href="#meaning">含义辨析</a></li>
+        <li><a href="#miya">蜜芽背景</a></li>
+        <li><a href="#wangyou">忘忧草释义</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>实用参考</h4>
+      <ul>
+        <li><a href="#guide">查找与辨别方法</a></li>
+        <li><a href="#faq">常见问题</a></li>
+        <li><a href="#top">返回顶部</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>温馨提示</h4>
+      <ul>
+        <li>涉及食用与药用请咨询专业机构</li>
+        <li>购物请核对商品与售后信息</li>
+        <li>注意区分同名不同主体</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    © 2024 蜜芽 · 忘忧草 关键词信息页 · 内容仅供一般性参考
+  </div>
+</footer>
+
+<script>
+  // 平滑滚动兼容处理：为锚点链接补充偏移，避免被固定页眉遮挡
+  document.querySelectorAll('a[href^="#"]').forEach(function(link){
+    link.addEventListener('click', function(e){
+      var id = this.getAttribute('href');
+      if(id.length > 1){
+        var target = document.querySelector(id);
+        if(target){
+          e.preventDefault();
+          var offset = 70;
+          var top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+          window.scrollTo({top: top, behavior: 'smooth'});
+        }
+      }
+    });
+  });
+
+  // 手风琴式问答：展开一个时收起其他，便于阅读
+  var faqItems = document.querySelectorAll('.faq-item');
+  faqItems.forEach(function(item){
+    item.addEventListener('toggle', function(){
+      if(this.open){
+        faqItems.forEach(function(other){
+          if(other !== item) other.open = false;
+        });
+      }
+    });
+  });
+</script>
+
+</body>
+  </html>
