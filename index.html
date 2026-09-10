@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>俄罗斯引擎搜索-主流搜索引擎介绍与使用指南</title>
+<meta name="description" content="介绍俄罗斯主流搜索引擎的基本情况、功能特点与使用场景，帮助中文用户了解 Yandex 等俄罗斯引擎搜索的入口、检索技巧、语言设置与常见问题。">
+<meta name="keywords" content="俄罗斯引擎搜索,俄罗斯搜索引擎,Yandex搜索,俄语搜索,搜索引擎">
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+<style>
+  :root{
+    --bg:#f4f6fb;
+    --panel:#ffffff;
+    --ink:#1c2230;
+    --ink-soft:#5a6478;
+    --line:#e2e7f0;
+    --brand:#d92d20;
+    --brand-deep:#a81f16;
+    --accent:#1e4fd8;
+    --accent-soft:#eaf0ff;
+    --radius:14px;
+    --shadow:0 6px 22px rgba(24,34,58,.07);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:"Helvetica Neue","PingFang SC","Microsoft YaHei","Hiragino Sans GB",Arial,sans-serif;
+    font-size:16px;
+    line-height:1.75;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;}
+  .wrap{
+    width:100%;
+    max-width:1180px;
+    margin:0 auto;
+    padding:0 20px;
+  }
+
+  /* ---------- 页眉 ---------- */
+  .site-header{
+    background:#fff;
+    border-bottom:1px solid var(--line);
+    position:sticky;
+    top:0;
+    z-index:50;
+  }
+  .header-inner{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+    min-height:66px;
+    flex-wrap:wrap;
+  }
+  .logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-weight:700;
+    font-size:19px;
+    letter-spacing:.3px;
+  }
+  .logo-mark{
+    width:34px;height:34px;
+    border-radius:10px;
+    background:linear-gradient(135deg,var(--brand),#f26b3a);
+    color:#fff;
+    display:flex;align-items:center;justify-content:center;
+    font-size:17px;font-weight:800;
+    flex:none;
+  }
+  .logo small{
+    display:block;
+    font-size:11px;
+    font-weight:400;
+    color:var(--ink-soft);
+    letter-spacing:1.5px;
+    line-height:1.2;
+  }
+  .main-nav ul{
+    display:flex;
+    gap:26px;
+    list-style:none;
+    margin:0;padding:0;
+    font-size:15px;
+    color:var(--ink-soft);
+  }
+  .main-nav a{
+    padding:6px 0;
+    border-bottom:2px solid transparent;
+    transition:.2s;
+  }
+  .main-nav a:hover{
+    color:var(--brand);
+    border-bottom-color:var(--brand);
+  }
+  .header-tip{
+    font-size:13px;
+    color:var(--ink-soft);
+    background:var(--accent-soft);
+    border:1px solid #d6e0ff;
+    border-radius:999px;
+    padding:5px 14px;
+  }
+
+  /* ---------- 首屏 ---------- */
+  .hero{
+    background:
+      radial-gradient(900px 380px at 88% -10%,rgba(30,79,216,.12),transparent 70%),
+      radial-gradient(700px 320px at 6% 110%,rgba(217,45,32,.10),transparent 70%),
+      #fff;
+    border-bottom:1px solid var(--line);
+    padding:54px 0 46px;
+  }
+  .hero-grid{
+    display:grid;
+    grid-template-columns:1.15fr .85fr;
+    gap:44px;
+    align-items:start;
+  }
+  .hero h1{
+    font-size:34px;
+    line-height:1.35;
+    margin:0 0 16px;
+    letter-spacing:.5px;
+  }
+  .hero h1 span{
+    color:var(--brand);
+  }
+  .hero p.lead{
+    font-size:16.5px;
+    color:var(--ink-soft);
+    margin:0 0 22px;
+  }
+  .hero-actions{
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+    margin-bottom:26px;
+  }
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:11px 22px;
+    border-radius:10px;
+    font-size:15px;
+    font-weight:600;
+    border:1px solid transparent;
+    cursor:pointer;
+    transition:.2s;
+  }
+  .btn-primary{
+    background:var(--accent);
+    color:#fff;
+    box-shadow:0 6px 16px rgba(30,79,216,.25);
+  }
+  .btn-primary:hover{background:#173fb0;}
+  .btn-ghost{
+    background:#fff;
+    border-color:var(--line);
+    color:var(--ink);
+  }
+  .btn-ghost:hover{border-color:var(--accent);color:var(--accent);}
+  .hero-facts{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:14px;
+    border-top:1px dashed var(--line);
+    padding-top:20px;
+  }
+  .fact b{
+    display:block;
+    font-size:15px;
+    color:var(--ink);
+  }
+  .fact span{
+    font-size:13px;
+    color:var(--ink-soft);
+  }
+
+  /* 搜索框演示卡 */
+  .search-card{
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    box-shadow:var(--shadow);
+    padding:24px;
+  }
+  .search-card h2{
+    font-size:16px;
+    margin:0 0 6px;
+  }
+  .search-card .sub{
+    font-size:13px;
+    color:var(--ink-soft);
+    margin:0 0 16px;
+  }
+  .fake-search{
+    display:flex;
+    border:1px solid var(--line);
+    border-radius:10px;
+    overflow:hidden;
+    background:#fbfcfe;
+  }
+  .fake-search input{
+    flex:1;
+    border:0;
+    background:transparent;
+    padding:12px 14px;
+    font-size:14px;
+    color:var(--ink);
+    outline:none;
+    font-family:inherit;
+  }
+  .fake-search button{
+    border:0;
+    background:var(--brand);
+    color:#fff;
+    padding:0 20px;
+    font-size:14px;
+    font-weight:600;
+    cursor:pointer;
+    font-family:inherit;
+  }
+  .fake-search button:hover{background:var(--brand-deep);}
+  .hint-list{
+    list-style:none;
+    margin:16px 0 0;
+    padding:0;
+    font-size:13.5px;
+    color:var(--ink-soft);
+  }
+  .hint-list li{
+    padding:8px 0 8px 18px;
+    position:relative;
+    border-bottom:1px dashed var(--line);
+  }
+  .hint-list li:last-child{border-bottom:0;}
+  .hint-list li::before{
+    content:"";
+    position:absolute;
+    left:0;top:16px;
+    width:7px;height:7px;
+    border-radius:50%;
+    background:var(--accent);
+  }
+
+  /* ---------- 通用区块 ---------- */
+  section.block{
+    padding:52px 0;
+  }
+  section.block.alt{
+    background:#fff;
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+  }
+  .section-head{
+    margin-bottom:28px;
+  }
+  .section-head .kicker{
+    font-size:12.5px;
+    letter-spacing:2px;
+    color:var(--brand);
+    font-weight:700;
+    text-transform:uppercase;
+  }
+  .section-head h2{
+    font-size:25px;
+    margin:8px 0 10px;
+    letter-spacing:.4px;
+  }
+  .section-head p{
+    margin:0;
+    color:var(--ink-soft);
+    max-width:760px;
+    font-size:15.5px;
+  }
+
+  /* ---------- 引擎卡片 ---------- */
+  .engine-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:20px;
+  }
+  .engine-card{
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:22px;
+    box-shadow:var(--shadow);
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+  }
+  .engine-card .tag{
+    align-self:flex-start;
+    font-size:12px;
+    font-weight:700;
+    color:var(--accent);
+    background:var(--accent-soft);
+    border-radius:999px;
+    padding:3px 11px;
+  }
+  .engine-card h3{
+    margin:0;
+    font-size:18px;
+  }
+  .engine-card h3 em{
+    font-style:normal;
+    font-size:12.5px;
+    color:var(--ink-soft);
+    font-weight:400;
+    margin-left:6px;
+  }
+  .engine-card p{
+    margin:0;
+    font-size:14.5px;
+    color:var(--ink-soft);
+  }
+  .engine-card ul{
+    margin:0;
+    padding-left:18px;
+    font-size:14px;
+    color:var(--ink-soft);
+  }
+  .engine-card ul li{margin-bottom:5px;}
+
+  /* ---------- 使用步骤 ---------- */
+  .steps{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:18px;
+    counter-reset:step;
+  }
+  .step{
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:22px 20px 20px;
+    position:relative;
+    box-shadow:var(--shadow);
+  }
+  .step::before{
+    counter-increment:step;
+    content:counter(step,decimal-leading-zero);
+    font-size:13px;
+    font-weight:800;
+    color:#fff;
+    background:var(--brand);
+    border-radius:8px;
+    padding:3px 9px;
+    display:inline-block;
+    margin-bottom:12px;
+    letter-spacing:1px;
+  }
+  .step h3{
+    font-size:16.5px;
+    margin:0 0 8px;
+  }
+  .step p{
+    margin:0;
+    font-size:14.5px;
+    color:var(--ink-soft);
+  }
+
+  /* ---------- 技巧表格 ---------- */
+  .table-wrap{
+    overflow-x:auto;
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    background:#fff;
+    box-shadow:var(--shadow);
+  }
+  table{
+    width:100%;
+    border-collapse:collapse;
+    min-width:620px;
+    font-size:14.5px;
+  }
+  thead th{
+    background:#f7f9fd;
+    text-align:left;
+    padding:13px 18px;
+    font-size:14px;
+    color:var(--ink);
+    border-bottom:1px solid var(--line);
+    white-space:nowrap;
+  }
+  tbody td{
+    padding:13px 18px;
+    border-bottom:1px solid var(--line);
+    color:var(--ink-soft);
+    vertical-align:top;
+  }
+  tbody tr:last-child td{border-bottom:0;}
+  tbody td:first-child{
+    color:var(--ink);
+    font-weight:600;
+    white-space:nowrap;
+  }
+  code{
+    background:#f0f3f9;
+    border-radius:5px;
+    padding:1px 6px;
+    font-size:13.5px;
+    color:var(--brand-deep);
+    font-family:Consolas,Monaco,monospace;
+  }
+
+  /* ---------- 场景 + 侧栏 ---------- */
+  .split{
+    display:grid;
+    grid-template-columns:1.4fr .9fr;
+    gap:28px;
+    align-items:start;
+  }
+  .scene-list{
+    display:grid;
+    gap:16px;
+  }
+  .scene{
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-left:4px solid var(--accent);
+    border-radius:10px;
+    padding:18px 20px;
+  }
+  .scene h3{
+    margin:0 0 6px;
+    font-size:16.5px;
+  }
+  .scene p{
+    margin:0;
+    font-size:14.5px;
+    color:var(--ink-soft);
+  }
+  .side-box{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:22px;
+    box-shadow:var(--shadow);
+  }
+  .side-box h3{
+    margin:0 0 14px;
+    font-size:16.5px;
+    padding-bottom:10px;
+    border-bottom:1px solid var(--line);
+  }
+  .side-box ul{
+    margin:0;
+    padding-left:18px;
+    font-size:14.5px;
+    color:var(--ink-soft);
+  }
+  .side-box ul li{margin-bottom:9px;}
+  .side-box .note{
+    margin-top:16px;
+    font-size:13.5px;
+    color:var(--ink-soft);
+    background:#f7f9fd;
+    border-radius:9px;
+    padding:12px 14px;
+    line-height:1.7;
+  }
+
+  /* ---------- 常见问题 ---------- */
+  .faq{
+    display:grid;
+    gap:12px;
+    max-width:900px;
+  }
+  details{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:11px;
+    padding:0 20px;
+    box-shadow:var(--shadow);
+  }
+  details[open]{
+    border-color:#c9d6f5;
+  }
+  summary{
+    cursor:pointer;
+    list-style:none;
+    padding:16px 0;
+    font-size:15.5px;
+    font-weight:600;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:14px;
+  }
+  summary::-webkit-details-marker{display:none;}
+  summary::after{
+    content:"+";
+    color:var(--accent);
+    font-size:19px;
+    font-weight:700;
+    flex:none;
+    transition:.2s;
+  }
+  details[open] summary::after{
+    content:"−";
+  }
+  details p{
+    margin:0 0 18px;
+    font-size:14.5px;
+    color:var(--ink-soft);
+  }
+
+  /* ---------- 页脚 ---------- */
+  footer{
+    background:#171d2b;
+    color:#b9c1d2;
+    padding:44px 0 26px;
+    font-size:14px;
+  }
+  .footer-grid{
+    display:grid;
+    grid-template-columns:1.4fr 1fr 1fr;
+    gap:30px;
+    padding-bottom:26px;
+    border-bottom:1px solid rgba(255,255,255,.1);
+  }
+  .footer-grid h4{
+    color:#fff;
+    font-size:15px;
+    margin:0 0 12px;
+  }
+  .footer-grid p{
+    margin:0;
+    line-height:1.8;
+    color:#98a2b8;
+  }
+  .footer-grid ul{
+    list-style:none;
+    margin:0;
+    padding:0;
+  }
+  .footer-grid ul li{margin-bottom:9px;}
+  .footer-grid ul a:hover{color:#fff;}
+  .footer-bottom{
+    padding-top:20px;
+    display:flex;
+    justify-content:space-between;
+    gap:16px;
+    flex-wrap:wrap;
+    font-size:13px;
+    color:#7e8899;
+  }
+
+  /* ---------- 响应式 ---------- */
+  @media (max-width:960px){
+    .hero-grid{grid-template-columns:1fr;}
+    .split{grid-template-columns:1fr;}
+    .footer-grid{grid-template-columns:1fr 1fr;}
+  }
+  @media (max-width:680px){
+    .header-inner{min-height:auto;padding:12px 0;}
+    .main-nav ul{gap:16px;font-size:14px;flex-wrap:wrap;}
+    .header-tip{display:none;}
+    .hero{padding:36px 0 32px;}
+    .hero h1{font-size:25px;}
+    .hero-facts{grid-template-columns:1fr;gap:10px;}
+    section.block{padding:38px 0;}
+    .section-head h2{font-size:21px;}
+    .footer-grid{grid-template-columns:1fr;}
+    .fake-search button{padding:0 14px;}
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <div class="logo">
+      <span class="logo-mark">俄</span>
+      <span>
+        俄罗斯引擎搜索
+        <small>RUSSIAN SEARCH ENGINE GUIDE</small>
+      </span>
+    </div>
+    <nav class="main-nav" aria-label="主导航">
+      <ul>
+        <li><a href="#engines">主流引擎</a></li>
+        <li><a href="#howto">使用步骤</a></li>
+        <li><a href="#skills">检索技巧</a></li>
+        <li><a href="#scenes">适用场景</a></li>
+        <li><a href="#faq">常见问题</a></li>
+      </ul>
+    </nav>
+    <span class="header-tip">语言与地区设置是关键</span>
+  </div>
+</header>
+
+<main>
+
+  <!-- 首屏 -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <h1>俄罗斯引擎搜索：<span>认识俄罗斯主流搜索引擎与检索方法</span></h1>
+        <p class="lead">
+          提到“俄罗斯引擎搜索”，多数人首先想到的是 Yandex。俄罗斯的搜索市场以本土引擎为主，
+          它们对俄语语法、西里尔字母输入、本地新闻与地图服务有更深的适配。本页整理俄罗斯主流搜索引擎的基本情况、
+          使用步骤、检索技巧与常见问题，帮助中文用户在需要查找俄语信息时更快找到入口、少走弯路。
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#engines">查看主流引擎</a>
+          <a class="btn btn-ghost" href="#howto">了解使用步骤</a>
+        </div>
+        <div class="hero-facts">
+          <div class="fact">
+            <b>以俄语为主</b>
+            <span>西里尔字母检索效果更好</span>
+          </div>
+          <div class="fact">
+            <b>本地化服务强</b>
+            <span>新闻、地图、翻译等一体化</span>
+          </div>
+          <div class="fact">
+            <b>需注意设置</b>
+            <span>地区、语言、安全搜索</span>
+          </div>
+        </div>
+      </div>
+
+      <aside class="search-card">
+        <h2>检索思路速览</h2>
+        <p class="sub">下面演示的是检索思路，并非真实接口，输入后仅用于说明关键词组织方式。</p>
+        <form class="fake-search" onsubmit="return false;">
+          <input type="text" id="demoInput" placeholder="例如：погода Москва / 莫斯科 天气" aria-label="检索示例输入框">
+          <button type="button" id="demoBtn">示例</button>
+        </form>
+        <ul class="hint-list">
+          <li>俄语关键词通常比中文关键词命中更多本地内容。</li>
+          <li>查新闻、政府公告、本地服务时，优先使用俄语词。</li>
+          <li>查学术资料可搭配英文关键词，结果更丰富。</li>
+          <li>不确定拼写时，可先用翻译工具确认西里尔字母写法。</li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <!-- 主流引擎 -->
+  <section class="block" id="engines">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kicker">Engines</div>
+        <h2>俄罗斯常见的搜索引擎</h2>
+        <p>俄罗斯搜索市场结构相对独特，本土引擎长期占据主要份额，同时也有国际引擎提供俄语检索。以下按常见使用顺序介绍，方便按需选择。</p>
+      </div>
+
+      <div class="engine-grid">
+        <article class="engine-card">
+          <span class="tag">使用最广</span>
+          <h3>Yandex <em>Яндекс</em></h3>
+          <p>俄罗斯具有代表性的搜索引擎，除网页检索外，还整合地图、翻译、天气、新闻、邮箱等多项服务，对俄语形态变化的处理较为细致。</p>
+          <ul>
+            <li>适合查找俄语网页、本地资讯与地图信息</li>
+            <li>提供图片、视频、新闻等分类检索</li>
+            <li>翻译工具可辅助中俄文互译</li>
+          </ul>
+        </article>
+
+        <article class="engine-card">
+          <span class="tag">本土老牌</span>
+          <h3>Rambler <em>Рамблер</em></h3>
+          <p>俄罗斯较早的互联网门户之一，提供搜索与新闻聚合服务，在部分俄语用户中仍有一定使用习惯。</p>
+          <ul>
+            <li>以门户资讯和搜索结合为特点</li>
+            <li>可作为俄语新闻的补充来源</li>
+            <li>界面以俄语为主，需具备基础阅读能力</li>
+          </ul>
+        </article>
+
+        <article class="engine-card">
+          <span class="tag">补充选择</span>
+          <h3>Mail.ru 搜索 <em>Поиск Mail.ru</em></h3>
+          <p>依托 Mail.ru 门户生态提供的检索入口，与邮箱、新闻、社交等服务相连，适合在俄语互联网环境中做补充检索。</p>
+          <ul>
+            <li>与门户服务衔接紧密</li>
+            <li>可检索俄语新闻与社区内容</li>
+            <li>结果风格与 Yandex 存在差异</li>
+          </ul>
+        </article>
+
+        <article class="engine-card">
+          <span class="tag">国际引擎</span>
+          <h3>Google 俄语检索</h3>
+          <p>国际引擎同样收录大量俄语页面，在学术、技术文档、英文资料混合检索时较为方便，可作为交叉验证的渠道。</p>
+          <ul>
+            <li>适合中英俄多语言混合检索</li>
+            <li>学术与技术资料覆盖较广</li>
+            <li>本地化服务不如本土引擎细致</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 使用步骤 -->
+  <section class="block alt" id="howto">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kicker">How to</div>
+        <h2>使用俄罗斯引擎搜索的基本步骤</h2>
+        <p>对中文用户来说，难点通常不在“打开网页”，而在于语言、地区与结果筛选。按下面顺序操作，能明显减少无效检索。</p>
+      </div>
+
+      <div class="steps">
+        <div class="step">
+          <h3>明确检索目标</h3>
+          <p>先判断要找的是新闻、官方公告、商品、地图位置还是学术资料。不同目标适合的引擎与关键词语言不同。</p>
+        </div>
+        <div class="step">
+          <h3>准备俄语关键词</h3>
+          <p>用翻译工具把中文需求转成俄语，注意专有名词的常见写法。俄语有格变化，搜索时用原形词通常也能得到结果。</p>
+        </div>
+        <div class="step">
+          <h3>进入引擎并设置语言</h3>
+          <p>在设置中确认界面语言与检索地区。若只想看俄语内容，可限定语言；若需多语言资料，则保持默认。</p>
+        </div>
+        <div class="step">
+          <h3>筛选与交叉验证</h3>
+          <p>结合时间范围、站点类型等筛选条件缩小结果，重要信息建议在两个以上来源之间交叉核对。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 检索技巧 -->
+  <section class="block" id="skills">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kicker">Skills</div>
+        <h2>提升命中率的检索技巧</h2>
+        <p>不同引擎对运算符的支持略有差异，下面列出的是较为通用、在俄语检索中常用的写法，实际效果以引擎当前规则为准。</p>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>写法</th>
+              <th>作用</th>
+              <th>使用说明</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>"..."</code></td>
+              <td>精确匹配短语</td>
+              <td>把词组放入英文双引号，适合查找固定名称、标题或原文引用。</td>
+            </tr>
+            <tr>
+              <td><code>site:</code></td>
+              <td>限定站点</td>
+              <td>只检索某个域名下的内容，常用于查官方公告或特定媒体。</td>
+            </tr>
+            <tr>
+              <td><code>filetype:</code></td>
+              <td>限定文件格式</td>
+              <td>如限定 PDF、DOC，适合查找报告、表格与正式文件。</td>
+            </tr>
+            <tr>
+              <td><code>lang:</code> 或语言筛选</td>
+              <td>限定语言</td>
+              <td>部分引擎支持语言限定，可减少非目标语言的干扰结果。</td>
+            </tr>
+            <tr>
+              <td><code>-</code> 减号</td>
+              <td>排除词</td>
+              <td>放在词前可排除包含该词的结果，减少歧义干扰。</td>
+            </tr>
+            <tr>
+              <td>西里尔字母直输</td>
+              <td>提高本地命中</td>
+              <td>直接用俄语输入，比用拉丁字母转写更容易匹配到本地页面。</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- 场景 + 侧栏 -->
+  <section class="block alt" id="scenes">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kicker">Scenarios</div>
+        <h2>典型使用场景与注意事项</h2>
+        <p>俄罗斯引擎搜索的用途集中在几类需求上，不同场景对语言和结果筛选的要求差别较大。</p>
+      </div>
+
+      <div class="split">
+        <div class="scene-list">
+          <article class="scene">
+            <h3>查找俄语新闻与时事</h3>
+            <p>使用俄语关键词加上时间范围筛选，通常比中文关键词更有效。建议同时对照多家来源，避免单一渠道带来的信息偏差。</p>
+          </article>
+          <article class="scene">
+            <h3>查询本地生活信息</h3>
+            <p>天气、交通、地图、营业时间等信息，本土引擎的地图服务往往更完整。检索时可加上城市名称，提高结果的相关性。</p>
+          </article>
+          <article class="scene">
+            <h3>学术与技术资料检索</h3>
+            <p>俄语技术文档、论文摘要可用俄语关键词检索，也可与国际引擎交叉使用。注意区分正式出版物与个人页面。</p>
+          </article>
+          <article class="scene">
+            <h3>语言学习与翻译辅助</h3>
+            <p>借助引擎自带的翻译功能，可以在阅读俄语页面时获得中文参考。翻译结果仅作辅助，正式使用前建议人工校对。</p>
+          </article>
+          <article class="scene">
+            <h3>商品与价格信息了解</h3>
+            <p>若需了解俄罗斯市场的商品信息，可用俄语商品名检索。价格与库存会随时间变化，务必以页面实时显示为准。</p>
+          </article>
+        </div>
+
+        <aside class="side-box">
+          <h3>使用时的几点提醒</h3>
+          <ul>
+            <li>优先确认界面语言与检索地区设置，避免结果偏向其他地区。</li>
+            <li>俄语拼写错误会明显影响结果，可先用翻译工具核对。</li>
+            <li>涉及重要决策的信息，请以官方或权威渠道为准。</li>
+            <li>注意区分广告结果与自然结果，页面通常会有标识。</li>
+            <li>开启安全搜索可减少不适宜内容的出现。</li>
+          </ul>
+          <div class="note">
+            搜索引擎的功能、界面与规则会不定期调整，本页内容用于说明检索思路与通用方法，具体操作请以引擎当前页面为准。
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- 常见问题 -->
+  <section class="block" id="faq">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kicker">FAQ</div>
+        <h2>关于俄罗斯引擎搜索的常见问题</h2>
+        <p>整理中文用户较常提出的疑问，帮助快速判断该怎么用、注意什么。</p>
+      </div>
+
+      <div class="faq">
+        <details open>
+          <summary>俄罗斯引擎搜索主要指哪个搜索引擎？</summary>
+          <p>通常指 Yandex，它是俄罗斯使用范围较广的搜索引擎，并提供地图、翻译、新闻等多项服务。此外还有 Rambler、Mail.ru 搜索等本土入口，以及国际引擎的俄语检索。</p>
+        </details>
+        <details>
+          <summary>不懂俄语可以使用俄罗斯搜索引擎吗？</summary>
+          <p>可以尝试，但效果会受影响。界面通常提供多语言选项，翻译工具也能辅助阅读，不过用俄语关键词检索，命中本地内容的概率一般更高。建议先用翻译工具把需求转成俄语再检索。</p>
+        </details>
+        <details>
+          <summary>为什么搜索同样的词，结果和中文引擎差别很大？</summary>
+          <p>不同引擎的索引范围、排序规则和内容来源不同。俄罗斯本土引擎对俄语页面和本地服务的收录更充分，而中文引擎更偏向中文内容，因此结果差异属于正常现象。</p>
+        </details>
+        <details>
+          <summary>搜索结果里的信息可以直接采信吗？</summary>
+          <p>不建议直接采信。搜索结果只是入口，信息准确性取决于来源本身。涉及政策、医疗、法律、交易等重要内容时，应回到官方或权威渠道核对，并注意页面的发布时间。</p>
+        </details>
+        <details>
+          <summary>检索时有哪些需要特别注意的地方？</summary>
+          <p>留意语言与地区设置是否符合需求，注意区分广告与自然结果，避免在来源不明的页面填写个人信息。同时建议对关键信息做多来源交叉验证。</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <h4>俄罗斯引擎搜索</h4>
+        <p>围绕俄罗斯主流搜索引擎的入口、检索方法与使用注意事项整理的信息页面，帮助中文用户更高效地查找俄语互联网内容。</p>
+      </div>
+      <div>
+        <h4>页面导航</h4>
+        <ul>
+          <li><a href="#engines">主流引擎</a></li>
+          <li><a href="#howto">使用步骤</a></li>
+          <li><a href="#skills">检索技巧</a></li>
+          <li><a href="#scenes">适用场景</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>使用提醒</h4>
+        <ul>
+          <li>以引擎当前页面规则为准</li>
+          <li>重要信息请多来源核对</li>
+          <li>注意区分广告与自然结果</li>
+          <li>保护个人隐私与账号安全</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>本页内容为检索方法说明，不构成任何形式的建议或担保。</span>
+      <span>俄罗斯引擎搜索 · 使用指南</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var input = document.getElementById('demoInput');
+    var btn = document.getElementById('demoBtn');
+    if (!input || !btn) return;
+    var samples = [
+      'погода Москва',
+      'новости сегодня',
+      'карта метро',
+      'перевод на китайский',
+      'университет список'
+    ];
+    btn.addEventListener('click', function () {
+      var i = Math.floor(Math.random() * samples.length);
+      input.value = samples[i];
+    });
+  })();
+</script>
+
+</body>
+                                      </html>
